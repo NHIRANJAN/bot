@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ayurvedic Dosha Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+    
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4285f4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .result {
+            display: none; /* Initially hide the result container */
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .result h2 {
+            color: #4285f4;
+            text-align: center;
+        }
+
+
+        .container {
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 45px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Different colors and box shadows for question boxes */
+        .question-box {
+            background-color: #f7f7f7;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 20px; /* Add a gap between questions */
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Add gap between answer options */
+        input[type="radio"] {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #357ae8;
+        }
+
+        .result {
+            background-color: #ffffff;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .result h2 {
+            color: #4285f4;
+            text-align: center;
+        }
+        #para{
+            margin-top: 50px;
+        }
+        .box-button {
+            display: inline-block;
+            padding: 10px 20px; /* Adjust the padding to control button size */
+            background-color: rgb(0,0,0); /* Button background color */
+            color: white; /* Button text color */
+            text-decoration: none; /* Remove underline from the link */
+            border: 2px solid #007BFF; /* Border color and width */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+            margin-top:-30px;
+            position:fixed;
+            top:50px;
+            right:20px;
+        }
+        
+        /* Hover effect: Change background color on hover */
+        .box-button:hover {
+            background-color: #0056b3; /* New background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ayurvedic Dosha Test</h1>
+    <a href="http://127.0.0.1:8000/" class="box-button">Go back</a>
+    
+    <div class="container">
+        <form id="dosha-form">
+            <p id="para">Answer each question with the option that best describes you:</p>
+            
+            <!-- Question 1 -->
+            <div class="question-box">
+                <label for="q1">1. Do you often feel cold, especially in your hands and feet?</label>
+                <input type="radio" name="q1" value="vata" required>Frequently
+                <br>
+                <input type="radio" name="q1" value="pitta" required>Rarely
+                <br>
+                <input type="radio" name="q1" value="kapha" required>Occasionally
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-box">
+                <label for="q2">2. Is your appetite variable, and do you sometimes forget to eat?</label>
+                <input type="radio" name="q2" value="vata" required>Often 
+                <br>
+                <input type="radio" name="q2" value="pitta" required>Rarely 
+                <br>
+                <input type="radio" name="q2" value="kapha" required>Occasionally
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="question-box">
+                <label for="q3">3. Are you prone to worry and anxiety?</label>
+                <input type="radio" name="q3" value="vata" required>Often 
+                <br>
+                <input type="radio" name="q3" value="pitta" required>Rarely 
+                <br>
+                <input type="radio" name="q3" value="kapha" required>Occasionally 
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="question-box">
+                <label for="q4">4. Do you have a strong metabolism and a tendency to get irritated when hungry?</label>
+                <input type="radio" name="q4" value="vata" required>Often 
+                <br>
+                <input type="radio" name="q4" value="pitta" required>Rarely 
+                <br>
+                <input type="radio" name="q4" value="kapha" required>Occasionally 
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="question-box">
+                <label for="q5">5. Is your skin dry and prone to cracking?</label>
+                <input type="radio" name="q5" value="vata" required>Often 
+                <br>
+                <input type="radio" name="q5" value="pitta" required>Rarely 
+                <br>
+                <input type="radio" name="q5" value="kapha" required>Occasionally 
+            </div>
+            
+            <!-- Question 6 -->
+            <div class="question-box">
+                <label for="q6">6. Do you enjoy routine and stability in your daily life?</label>
+                <input type="radio" name="q6" value="vata" required>Often
+                <br>
+                <input type="radio" name="q6" value="pitta" required>Rarely
+                <br>
+                <input type="radio" name="q6" value="kapha" required>Occasionally 
+            </div>
+            
+            <!-- Question 7 -->
+            <div class="question-box">
+                <label for="q7">7. Is your hair generally thick and lustrous?</label>
+                <input type="radio" name="q7" value="vata" required>Often
+                <br>
+                <input type="radio" name="q7" value="pitta" required>Rarely
+                <br>
+                <input type="radio" name="q7" value="kapha" required>Occasionally 
+            </div>
+            
+            <!-- Question 8 -->
+            <div class="question-box">
+                <label for="q8">8. Do you prefer warm and spicy foods?</label>
+                <input type="radio" name="q8" value="vata" required>Rarely 
+                <br>
+                <input type="radio" name="q8" value="pitta" required>Often 
+                <br>
+                <input type="radio" name="q8" value="kapha" required>Occasionally 
+            </div>
+            
+            <!-- Question 9 -->
+            <div class="question-box">
+                <label for="q9">9. Are you easily agitated or prone to anger?</label>
+                <input type="radio" name="q9" value="vata" required>Occasionally
+                <br>
+                <input type="radio" name="q9" value="pitta" required>Often 
+                <br>
+                <input type="radio" name="q9" value="kapha" required>Rarely 
+            </div>
+            
+            <!-- Question 10 -->
+            <div class="question-box">
+                <label for="q10">10. Is your digestion generally strong and efficient?</label>
+                <input type="radio" name="q10" value="vata" required>Rarely
+                <br>
+                <input type="radio" name="q10" value="pitta" required>Often
+                <br>
+                <input type="radio" name="q10" value="kapha" required>Occasionally
+            </div>
+            
+            <!-- Question 11 -->
+            <div class="question-box">
+                <label for="q11">11. Do you have a tendency to gain weight easily?</label>
+                <input type="radio" name="q11" value="vata" required>Rarely
+                <br>
+                <input type="radio" name="q11" value="pitta" required>Occasionally
+                <br>
+                <input type="radio" name="q11" value="kapha" required>Often
+            </div>
+            
+            <!-- Question 12 -->
+            <div class="question-box">
+                <label for="q12">12. Are you a calm and patient individual?</label>
+                <input type="radio" name="q12" value="vata" required>Occasionally
+                <br>
+                <input type="radio" name="q12" value="pitta" required>Rarely 
+                <br>
+                <input type="radio" name="q12" value="kapha" required>Often 
+            </div>
+            <!-- Add more questions here... -->
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="result" id="result-container">
+        <h2>Your dominant dosha is <span id="dominant-dosha"></span></h2>
+    </div>
+    <script>
+        document.getElementById("dosha-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let vataScore = 0;
+            let pittaScore = 0;
+            let kaphaScore = 0;
+
+            // Get the selected radio button values and calculate scores
+            const formData = new FormData(event.target);
+            for (const entry of formData.entries()) {
+                const [name, value] = entry;
+                if (value === "vata") {
+                    vataScore++;
+                } else if (value === "pitta") {
+                    pittaScore++;
+                } else if (value === "kapha") {
+                    kaphaScore++;
+                }
+            }
+
+            // Determine the dominant dosha
+            let dominantDosha = "";
+            if (vataScore > pittaScore && vataScore > kaphaScore) {
+                dominantDosha = "Vata";
+            } else if (pittaScore > vataScore && pittaScore > kaphaScore) {
+                dominantDosha = "Pitta";
+            } else if (kaphaScore > vataScore && kaphaScore > pittaScore) {
+                dominantDosha = "Kapha";
+            } else {
+                dominantDosha = "Balanced";
+            }
+
+            // Display the result
+            document.getElementById("dominant-dosha").textContent = dominantDosha;
+            document.getElementById("result-container").style.display = "block";
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
